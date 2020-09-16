@@ -63,20 +63,20 @@ const personOne = new Person('William', 21);
 const personTwo = new Person('Grady', 33);
 const personThree = new Person('Cheree', 41);
 
-console.log(personOne.toString());
-console.log(personTwo.toString());
-console.log(personThree.toString());
+personOne.toString();
+personTwo.toString();
+personThree.toString();
 
 personTwo.eat('pineapple');
 personTwo.eat('snails');
 personTwo.eat('sandwich');
 personTwo.eat('orange');
 
-console.log(personTwo.stomach);
+personTwo.stomach;
 
 personTwo.poop();
 
-console.log(personTwo.stomach);
+personTwo.stomach;
 
 /*
   TASK 2
@@ -105,9 +105,24 @@ Car.prototype.fill = function(gallons){
   this.tank += (gallons);
 };
 
-const carOne = new Car('Ford', 20);
-const carTwo = new Car('Chevy', 15);
+Car.prototype.drive = function(distance){
+  this.odometer + (distance); 
+
+  if(this.tank = 0){
+    return `"I ran out of fuel at ${this.odometer} miles!"`
+  }
+};
+
+// const carOne = new Car('Ford', 20);
+// const carTwo = new Car('Chevy', 15);
 const carThree = new Car('Hyundai', 25);
+
+console.log("Odometer: ", carThree.odometer);
+carThree.fill(0);
+carThree.drive(50);
+console.log("Odometer: ", carThree.odometer);
+console.log("Fuel: ", carThree.tank);
+
 
 /*
   TASK 3
