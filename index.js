@@ -106,8 +106,8 @@ Car.prototype.fill = function(gallons){
 };
 
 Car.prototype.drive = function(distance){
-  this.odometer + (distance); 
-
+  this.odometer += (distance); 
+  this.tank = distance - (this.tank/this.milesPerGallon);
   if(this.tank = 0){
     return `"I ran out of fuel at ${this.odometer} miles!"`
   }
@@ -118,7 +118,7 @@ Car.prototype.drive = function(distance){
 const carThree = new Car('Hyundai', 25);
 
 console.log("Odometer: ", carThree.odometer);
-carThree.fill(0);
+carThree.fill(10);
 carThree.drive(50);
 console.log("Odometer: ", carThree.odometer);
 console.log("Fuel: ", carThree.tank);
@@ -131,18 +131,21 @@ console.log("Fuel: ", carThree.tank);
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(attrib) {
+  Person.call(this, attrib);
 
 }
+
+Baby.prototype = Object.create(Person.prototype);
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding -
+  2. Implicit Binding - 
+  3. Explicit Binding - 
+  4. New Binding - 
 */
 
 
